@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config()
 const cors = require("cors");
 const mongoose = require("mongoose");
 const todoRoutes = require('./routes/todo.routes');
@@ -19,7 +20,7 @@ mongoose
     console.error(err.message);
   });
 
-  app.listen(3020, (error) => {
+  app.listen(process.env.PORT , (error) => {
     if (!error) {
       return console.log("Api Started Successfully in Port 3020!"); 
     } 
