@@ -8,11 +8,10 @@ const todoSchema = new Schema({
     start_date : {
         type: Date,
         required: true,
-        default : Date.now(),
+        default: new Date,
     },
     due_date : {
-        type: String,
-        required: true,
+        type: Date,
     },
     description : {
         type: String,
