@@ -11,13 +11,14 @@ module.exports.create = async (body) => {
     due_date: body.due_date,
     description: body.description,
   });
+  console.log(task);
   await task.save();
   return task;
 };
 
-exports.update = async (body, id) => {
+exports.update = async (id,body) => {
   return await todoModel.findByIdAndUpdate(id, body, { new: true });
 };
-exports.delete = async (body, id) => {
+exports.delete = async (id) => {
   return await todoModel.findByIdAndDelete(id);
 };

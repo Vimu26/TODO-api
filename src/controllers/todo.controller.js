@@ -34,7 +34,7 @@ module.exports.create = async(req , res) => {
 
 module.exports.update = async(req , res) => {
     try {
-     const todo = await todoService.update(req.body , req.params.id);
+     const todo = await todoService.update(req.params.id, req.body);
      res.status(200).json({
         status: true,
         message: "Task updated Successfully",
@@ -50,7 +50,7 @@ module.exports.update = async(req , res) => {
 
 module.exports.delete = async(req , res) => {
     try {
-     const todo = await todoService.delete(req.body , req.params.id);
+     const todo = await todoService.delete(req.params.id);
      res.status(200).json({
         status: true,
         message: "Task Deleted Successfully",
