@@ -16,7 +16,7 @@ module.exports.create = async (body) => {
   return task;
 };
 
-exports.update = async (id,body) => {
+exports.update = async (id, body) => {
   return await todoModel.findByIdAndUpdate(id, body, { new: true });
 };
 exports.delete = async (id) => {
